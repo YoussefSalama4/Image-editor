@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+}
+:root {
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --text-color: #fff;
+  --main-color: #0ef;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  height: 15px;
+}
+*::selection {
+  background-color: var(--second-bg-color);
+  color: var(--main-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  background-color: var(--second-bg-color);
+  width: 80vw;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  gap: 20px;
+}
+
+.img {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.img .img-box {
+  border: 3px dashed white;
+  min-width: 25vw;
+  min-height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img .img-box label {
+  position: absolute;
+}
+#img-desc:hover {
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.img .img-box img,
+canvas {
+  max-width: 35vw;
+  max-height: 40vh;
+  display: block;
+}
+.upload input {
+  display: none;
+}
+.upload label {
+  color: var(--text-color);
+  padding: 8px 20px;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px dashed var(--main-color);
+}
+
+.filters ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.filters ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  direction: rtl;
+}
+
+.filters ul li:last-child {
+  flex-direction: row;
+  justify-content: space-around;
+}
+.filters ul li:last-child a,
+.filters ul li:last-child span {
+  display: none;
+}
+.filters ul li a,
+.filters ul li span {
+  padding: 10px 20px;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease;
+}
+.filters ul li a:hover,
+.filters ul li span:hover {
+  border: 2px solid var(--main-color);
+}
+.filters ul li input {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .img img,
+  canvas {
+    max-width: 70vw;
+  }
+}
